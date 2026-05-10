@@ -8,8 +8,8 @@ env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 # MongoDB connection details
-MONGODB_URL = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-DATABASE_NAME = os.getenv("DB_NAME", "team_task_db")
+MONGODB_URL = os.getenv("MONGO_URI")
+DATABASE_NAME = os.getenv("DB_NAME")
 
 client = None
 db = None
