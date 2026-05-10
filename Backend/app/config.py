@@ -7,8 +7,8 @@ class Settings:
     PROJECT_NAME: str = "Team Task Manager"
     
     # MongoDB configuration
-    MONGODB_URL: str = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-    DATABASE_NAME: str = os.getenv("DB_NAME", "team_task_db")
+    MONGODB_URL: str = os.getenv("MONGO_URI")
+    DATABASE_NAME: str = os.getenv("DB_NAME")
     
     # JWT configuration
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-change-it")
