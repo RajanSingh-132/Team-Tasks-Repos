@@ -15,7 +15,7 @@ app = FastAPI(lifespan=lifespan)
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://outstanding-fascination-production-cab6.up.railway.app/"],
+    allow_origins=["https://outstanding-fascination-production-cab6.up.railway.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
