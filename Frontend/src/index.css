@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: #5b71f0;
+    --brand-glow: rgba(91,113,240,0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-surface-light dark:bg-surface-dark text-gray-900 dark:text-gray-100;
+    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 dark:bg-gray-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-400; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl;
+    @apply border border-white/60 dark:border-white/10;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-2xl shadow-card dark:shadow-card-dark;
+    @apply border border-gray-100 dark:border-gray-800;
+    @apply transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white;
+    @apply px-5 py-2.5 rounded-xl font-semibold text-sm;
+    @apply transition-all duration-150 shadow-sm hover:shadow-glow;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-sm;
+    @apply flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700;
+    @apply text-gray-700 dark:text-gray-300 px-5 py-2.5 rounded-xl font-semibold text-sm;
+    @apply transition-all duration-150 flex items-center gap-2;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-gray-100 dark:hover:bg-gray-800;
+    @apply text-gray-600 dark:text-gray-400 px-3 py-2 rounded-lg text-sm;
+    @apply transition-all duration-150 flex items-center gap-2;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white;
+    @apply px-5 py-2.5 rounded-xl font-semibold text-sm;
+    @apply transition-all duration-150 flex items-center gap-2;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl text-sm font-medium;
+    @apply bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700;
+    @apply text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-500;
+    @apply transition-all duration-150;
+  }
+
+  .label {
+    @apply text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5 block;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-todo        { @apply badge bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400; }
+  .badge-in_progress { @apply badge bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400; }
+  .badge-done        { @apply badge bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400; }
+  .badge-low         { @apply badge bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400; }
+  .badge-medium      { @apply badge bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400; }
+  .badge-high        { @apply badge bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400; }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold;
+    @apply text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100;
+    @apply hover:bg-gray-100 dark:hover:bg-gray-800/80;
+    @apply transition-all duration-150 cursor-pointer;
+  }
+
+  .sidebar-link-active {
+    @apply bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400;
+    @apply border border-brand-200/60 dark:border-brand-800/60;
+    @apply shadow-sm;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+  }
+
+  .section-title {
+    @apply text-lg font-bold text-gray-900 dark:text-white;
+  }
+
+  .shimmer {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-800 rounded-xl;
+  }
+}
