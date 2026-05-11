@@ -1,6 +1,6 @@
 # Team Tasks Repos — Railway Deployment Guide
 
-A full-stack task management app with a React (Vite) frontend and FastAPI backend, both deployed on Railway.
+A full-stack task management app with a Next.js frontend and FastAPI backend, both deployed on Railway.
 
 ---
 
@@ -8,7 +8,7 @@ A full-stack task management app with a React (Vite) frontend and FastAPI backen
 
 ```
 team-tasks-repos/
-├── frontend/        # React + Vite app
+├── frontend/        # Next.js
 └── backend/         # FastAPI (Python)
 ```
 
@@ -71,7 +71,7 @@ Save this — you will need it for the frontend.
 
 ---
 
-## Step 2 — Deploy the Frontend (React + Vite)
+## Step 2 — Deploy the Frontend (Next)
 
 1. In the same Railway project, click **+ New Service**
 2. Select **Deploy from GitHub repo** → choose **team-tasks-repos** → select the **frontend folder**
@@ -230,7 +230,7 @@ Browser
   │
   ▼
 Frontend (Railway)
-React + Vite — served via `serve`
+Next — served via `serve`
   │
   │  API calls (HTTPS)
   ▼
